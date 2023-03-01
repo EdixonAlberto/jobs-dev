@@ -1,0 +1,36 @@
+{
+  "name": "template-react",
+  "description": "Plantilla para crear aplicaciones web usando Vite, React + TypeScript y Sass",
+  "private": true,
+  "license": "UNLICENSED",
+  "version": "0.0.1",
+  "type": "module",
+  "author": {
+    "name": "Edixon Piña",
+    "email": "edixonalbertto@gmail.com"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write ./src/**/*.{ts,scss,json}"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=16.18.0",
+    "yarn": "~1.22.0"
+  }
+}
