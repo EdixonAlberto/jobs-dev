@@ -9,11 +9,11 @@ export default defineConfig({
   base: '/',
   plugins: [react()],
   css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "~/scss/global.scss" as *;`
-      }
-    }
+    // preprocessorOptions: {
+    //   scss: {
+    //     additionalData: `@use "~/scss/global.scss" as *;`
+    //   }
+    // }
   },
   resolve: {
     alias: [

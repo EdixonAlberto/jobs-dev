@@ -1,9 +1,10 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "syler.sass-indented",
     "naumovs.color-highlight",
+    "rangav.vscode-thunder-client",
     "irongeek.vscode-env",
-    "rangav.vscode-thunder-client"
+    "zignd.html-css-class-completion",
+    "rodrigovallades.es7-react-js-snippets"
   ]
 }

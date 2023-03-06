@@ -1,0 +1,36 @@
+.jd__icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.jd__input {
+  height: 48px;
+  width: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.jd__input input {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  outline: none;
+  border: none;
+  border-radius: inherit;
+  background: inherit;
+  color: var(--color-grey);
+  font-size: 14px;
+  font-family: 'ProductSans';
+  font-weight: 400;
+}
+
+.search__input input::placeholder {
+  color: var(--color-grey);
+  font-size: 14px;
+  font-family: 'ProductSans';
+  font-weight: 400;
+}

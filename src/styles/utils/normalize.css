@@ -1,0 +1,11 @@
+* {
+  /* MODE DEV */
+  /* outline: 1px solid red !important; */
+  box-sizing: border-box;
+  font-family: sans-serif, Helvetica;
+}
+
+body {
+  background: var(--color-grey-lite);
+  overflow-y: hidden;
+}

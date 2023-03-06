@@ -1,0 +1,26 @@
+@font-face {
+  src: url('/static/fonts/ProductSansBold.ttf') format('truetype');
+  font-family: 'ProductSans';
+  font-weight: 700;
+}
+
+@font-face {
+  src: url('/static/fonts/ProductSansRegular.ttf') format('truetype');
+  font-family: 'ProductSans';
+  font-weight: 400;
+}
+
+body {
+  font-family: 'ProductSans';
+}
+
+.fd-title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.fd-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
