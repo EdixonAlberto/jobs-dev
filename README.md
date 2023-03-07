@@ -1,10 +1,10 @@
-# Template React
+# Jobs Dev
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/028825ef-0a5b-46b1-a22e-3e6a0705bf42/deploy-status)](https://app.netlify.com/sites/jobs-dev-web/deploys)
 
 <!-- ![template-react]() -->
 
-Plantilla para crear aplicaciones web usando Vite, React + TypeScript y Sass
+**JobsDev** es el destino número uno para buscar y listar increibles ofertas de trabajo remoto.
 
 ## Inicio
 
@@ -29,7 +29,7 @@ cp .env.template .env
 - `Auth`: Componente de react que valida si el usuarios ha iniciado sesion, ademas de verificar el nivel de acceso a la
   pagina por medio del rol (si lo posee).
 - `Login`: Vista para que el usuario inicie sesion.
-- `Home`: Vista de inicio.
+- `Jobs`: Vista de inicio.
 - `NotFound`: Vista mostrada cuando no se encuentra el recurso solicitado.
 
 ## Lista de Comandos

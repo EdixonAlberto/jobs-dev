@@ -23,12 +23,12 @@ export function Jobs() {
   }, [jobs, search])
 
   async function getJobs(): Promise<void> {
-    const response = await fetch('http://localhost:4000/api/jobs', {
-      headers: {
-        Authorization: 'Bearer 123'
-      }
+    const { VITE_API_URL, VITE_ACCESS_TOKEN } = import.meta.env
+    const response = await fetch(`${VITE_API_URL}/api/jobs`, {
+      headers: { Authorization: `Bearer ${VITE_ACCESS_TOKEN}` }
     })
     const data = (await response.json()) as TResponseListApi<TJob>
+
     if (data.response) {
       const jobs = data.response.data.filter(job => {
         // prettier-ignore

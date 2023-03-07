@@ -1,8 +1,8 @@
 {
-  "name": "template-react",
-  "description": "Plantilla para crear aplicaciones web usando Vite, React + TypeScript y Sass",
+  "name": "jobs-dev",
+  "description": "JobsDev es el destino número uno para buscar y listar increibles ofertas de trabajo remoto",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "version": "0.0.1",
   "type": "module",
   "author": {
