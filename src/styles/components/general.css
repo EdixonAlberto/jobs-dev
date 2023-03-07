@@ -22,15 +22,25 @@
   border: none;
   border-radius: inherit;
   background: inherit;
-  color: var(--color-grey);
   font-size: 14px;
-  font-family: 'ProductSans';
   font-weight: 400;
 }
 
-.search__input input::placeholder {
+.jd__input input::placeholder {
   color: var(--color-grey);
   font-size: 14px;
-  font-family: 'ProductSans';
   font-weight: 400;
+}
+
+.jd__link {
+  color: var(--color-green-dark);
+  font-weight: 700;
+}
+
+.jd__link:hover {
+  color: #000;
+}
+
+.jd__link:visited {
+  color: var(--color-grey);
 }

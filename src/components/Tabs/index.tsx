@@ -14,26 +14,29 @@ export function Tabs() {
 
   return (
     <footer className="tabs">
-      <ul className="tabs__items">
-        <li className={'tabs__items__tab' + (tab === '' ? ' active' : '')} onClick={() => changeView('')}>
+      <ul className="tabs__container">
+        <li className={'tabs__container__item' + (tab === '' ? ' active' : '')} onClick={() => changeView('')}>
           <Icons.Home />
           <span>Inicio</span>
         </li>
 
         <li
-          className={'tabs__items__tab' + (tab === 'statistics' ? ' active' : '')}
+          className={'tabs__container__item' + (tab === 'statistics' ? ' active' : '')}
           onClick={() => changeView('statistics')}
         >
           <Icons.Chart />
           <span>Estadisticas</span>
         </li>
 
-        <li className={'tabs__items__tab' + (tab === 'subs' ? ' active' : '')} onClick={() => changeView('subs')}>
+        <li className={'tabs__container__item' + (tab === 'subs' ? ' active' : '')} onClick={() => changeView('subs')}>
           <Icons.Wallet />
           <span>Subscripción</span>
         </li>
 
-        <li className={'tabs__items__tab' + (tab === 'profile' ? ' active' : '')} onClick={() => changeView('profile')}>
+        <li
+          className={'tabs__container__item' + (tab === 'profile' ? ' active' : '')}
+          onClick={() => changeView('profile')}
+        >
           <Icons.User />
           <span>Perfil</span>
         </li>

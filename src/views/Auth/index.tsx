@@ -6,6 +6,7 @@ interface IAuthProps extends PropsWithChildren {
 }
 
 export function Auth({ children, role = 'user' }: IAuthProps) {
+  localStorage.setItem('session', JSON.stringify({ user: 'temporal' }))
   const session = JSON.parse(localStorage.getItem('session') || 'null') as TSession | null
 
   if (!session) {

@@ -4,16 +4,16 @@
 }
 
 .jobs__header {
-  padding: 40px 20px 5px 20px;
+  padding: 30px 20px 0 20px;
   position: relative;
   text-align: center;
-  border-radius: 0 0 90px;
+  border-bottom-right-radius: 50px;
   z-index: 2;
 }
 
 .jobs__header::before {
   content: '';
-  height: calc(100% + 80px);
+  height: calc(100% + 130px);
   width: 100%;
   position: absolute;
   top: -80px;
@@ -21,38 +21,40 @@
   right: 0;
   background: var(--color-green-dark);
   background: linear-gradient(300deg, var(--color-green-lite) 0%, var(--color-green-dark) 50%);
+  border-radius: inherit;
   z-index: 0;
 }
 
 .jobs__header p {
   margin-top: 0;
   position: relative;
-  font-size: 14px;
   color: var(--color-grey-dark);
 }
 
 .jobs__header__title {
+  margin-top: 30px;
   margin-bottom: 0;
   position: relative;
   text-align: left;
-  font-size: 16px;
   z-index: 2;
 }
 
-.jobs__main__container {
+.jobs__container {
   list-style: none;
-  height: calc(100vh - 80px - 250px);
+  height: calc(100vh - 80px - 225px);
   margin: 0;
-  padding: 20px 20px 0 20px;
+  margin-top: 10px;
+  padding: 5px 20px 0 20px;
   background: var(--color-grey-lite);
   overflow-y: scroll;
 }
 
-.jobs__main__container::-webkit-scrollbar {
+.jobs__container::-webkit-scrollbar {
   /* display: none; */
 }
 
 .jobs__container__card {
+  user-select: none;
   margin-bottom: 15px;
   padding: 10px 20px;
   position: relative;
@@ -65,7 +67,7 @@
 }
 
 .jobs__container__card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .jobs__card__title {
@@ -74,9 +76,8 @@
   justify-content: space-between;
 }
 
-.jobs__card__title span:nth-child(1) {
-  font-size: 14px;
-  font-weight: 700;
+.jobs__card__title h3 {
+  margin: 0;
 }
 
 .jobs__card__title span:nth-child(2) {
@@ -88,26 +89,23 @@
 }
 
 .jobs__card__content {
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
-.jobs__card__content__item {
-  margin-bottom: 4px;
+.jobs__content__item {
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   column-gap: 8px;
 }
 
-.jobs__card__content__item .jd__icon {
+.jobs__content__item .jd__icon {
   height: 14px;
   width: 14px;
 }
 
-.jobs__card__content__item span {
-  font-size: 12px;
-}
-
+.jobs__content__item span,
 .jobs__card__content a {
   font-size: 12px;
 }

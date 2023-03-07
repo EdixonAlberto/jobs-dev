@@ -1,5 +1,7 @@
 # Template React
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/028825ef-0a5b-46b1-a22e-3e6a0705bf42/deploy-status)](https://app.netlify.com/sites/jobs-dev-web/deploys)
+
 <!-- ![template-react]() -->
 
 Plantilla para crear aplicaciones web usando Vite, React + TypeScript y Sass

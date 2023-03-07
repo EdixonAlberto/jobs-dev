@@ -1,0 +1,25 @@
+.not-found {
+  width: 100%;
+  height: 100vh;
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.not-found__title {
+  margin: 0;
+  font-size: 78px;
+  font-weight: 600;
+}
+
+.not-found__subtitle,
+.not-found__text {
+  color: #2d333b;
+}
+
+.not-found__text {
+  margin: 0;
+}

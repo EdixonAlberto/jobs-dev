@@ -31,7 +31,13 @@ export function Jobs() {
     const data = (await response.json()) as TResponseListApi<TJob>
     if (data.response) {
       const jobs = data.response.data.filter(job => {
-        return job.details.postulations < 50 && job.details.remote100 && job.details.language === 'spanish'
+        // prettier-ignore
+        return (
+          true
+          // && job.details.postulations < 100
+          && job.details.remote100
+          && job.details.language === 'spanish'
+        )
       })
       setJobs(jobs)
     } else {
@@ -44,47 +50,47 @@ export function Jobs() {
       <div className="jobs__header">
         <p>JobsDev es el destino número uno para buscar y listar increibles ofertas de trabajo remoto.</p>
         <Search onSearch={setSearch} />
-        <h3 className="jobs__header__title">Últimos Trabajos</h3>
+        <h3 className="jobs__header__title">Últimos Trabajos: {jobsFilter.length}</h3>
       </div>
 
-      <ul className="jobs__main__container">
+      <ul className="jobs__container">
         {jobsFilter.length ? (
           jobsFilter.map((job: TJob, i: number) => (
             <li key={i} className="jobs__container__card">
               <div className="jobs__card__title">
-                <span>{job.title}</span>
+                <h3>{job.title}</h3>
                 {job.isNew && <span>Nuevo</span>}
               </div>
 
               <div className="jobs__card__content">
-                <div className="jobs__card__content__item">
+                <div className="jobs__content__item">
                   <Icons.Company />
                   <span>{job.companyName}</span>
                 </div>
 
-                <div className="jobs__card__content__item">
+                <div className="jobs__content__item">
                   <Icons.Location />
                   <span>{job.location}</span>
                 </div>
 
-                <div className="jobs__card__content__item">
+                <div className="jobs__content__item">
                   <Icons.Code />
                   <span>{job.role}</span>
                 </div>
 
-                <div className="jobs__card__content__item">
+                <div className="jobs__content__item">
                   <Icons.Lang />
                   <span>{job.details.language === 'spanish' ? 'Español' : job.details.language}</span>
                 </div>
 
-                <div className="jobs__card__content__item">
+                <div className="jobs__content__item">
                   <Icons.Users />
                   <span>
                     {job.details.postulations + (job.details.postulations > 1 ? ' Postulaciones' : ' Postulante')}
                   </span>
                 </div>
 
-                <a href={job.url} target="_blank" rel="noopener noreferrer">
+                <a className="jd__link" href={job.url} target="_blank" rel="noopener noreferrer">
                   Ver Detalles
                 </a>
               </div>

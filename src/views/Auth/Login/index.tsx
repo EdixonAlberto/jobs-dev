@@ -10,7 +10,7 @@ export function Login() {
   }
 
   return (
-    <div className="Login">
+    <div className="login">
       <h1>Login</h1>
 
       <form action="" onSubmit={login}>

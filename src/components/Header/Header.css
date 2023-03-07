@@ -1,4 +1,4 @@
-.jd__headers {
+.header {
   height: var(--height-header);
   width: 100%;
   padding: 0 40px;
@@ -14,7 +14,9 @@
   text-align: left;
 }
 
-.header__icon {
+.header .jd__icon {
   cursor: pointer;
+  width: 20px;
+  height: 20px;
   margin-bottom: 10px;
 }

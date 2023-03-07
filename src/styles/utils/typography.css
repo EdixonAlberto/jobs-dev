@@ -10,16 +10,25 @@
   font-weight: 400;
 }
 
-body {
+body * {
   font-family: 'ProductSans';
 }
 
-.fd-title {
+h2 {
   font-size: 25px;
   font-weight: 700;
 }
 
-.fd-text {
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+p,
+span,
+strong,
+a,
+b {
   font-size: 14px;
   font-weight: 400;
   color: #000;
