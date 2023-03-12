@@ -10,6 +10,7 @@
 }
 
 .header__title {
+  user-select: none;
   margin: 0;
   text-align: left;
 }
