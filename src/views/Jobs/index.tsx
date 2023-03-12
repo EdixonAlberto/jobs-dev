@@ -2,11 +2,19 @@ import './Jobs.css'
 import { useEffect, useState } from 'react'
 import { Search } from '~/components/Search'
 import { Icons } from '~/components/Icons'
+import { useLocaleStorge } from '~/hooks/useLocalStorage'
+
+type TUserStore = {
+  views: string[]
+}
 
 export function Jobs() {
   const [jobs, setJobs] = useState<TJob[]>([])
   const [jobsFilter, setJobsFilter] = useState<TJob[]>([])
   const [search, setSearch] = useState<string>('')
+  const [userStore, setUserStore] = useLocaleStorge<TUserStore>('store', {
+    views: []
+  })
 
   useEffect(() => {
     getJobs()
@@ -50,6 +58,12 @@ export function Jobs() {
     }
   }
 
+  function setView(jobId: string): void {
+    setUserStore({
+      views: [...(userStore?.views || []), jobId]
+    })
+  }
+
   return (
     <div className="jobs">
       <div className="jobs__header">
@@ -60,12 +74,15 @@ export function Jobs() {
 
       <ul className="jobs__container">
         {jobsFilter.length ? (
-          jobsFilter.map((job: TJob, i: number) => (
-            <li key={i} className="jobs__container__card">
+          jobsFilter.map((job: TJob) => (
+            <li key={job.id} className="jobs__container__card">
               <div className="card__section jobs__card__content">
                 <div className="jobs__content__text">
-                  <div className="jobs__content__item">
-                    <h3>{job.title}</h3>
+                  <div className="item__title jobs__content__item">
+                    <h3>
+                      {job.title}
+                      {userStore?.views.includes(job.id) && <Icons.Eye />}
+                    </h3>
                   </div>
 
                   <div className="jobs__content__item">
@@ -116,7 +133,13 @@ export function Jobs() {
                 ))}
               </div>
 
-              <a className="card__section jd__link" href={job.url} target="_blank" rel="noopener noreferrer">
+              <a
+                className="card__section jd__link"
+                href={job.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setView(job.id)}
+              >
                 Ver Detalles
               </a>
             </li>

@@ -85,9 +85,14 @@
   margin-top: 10px;
 }
 
-.jobs__content__item h3 {
+.jobs__content__item.item__title h3 {
   margin: 0;
   margin-bottom: 10px;
+}
+
+.jobs__content__item.item__title .jd__icon {
+  display: inline;
+  margin: 0 0 -4px 5px;
 }
 
 .jobs__content__item {
