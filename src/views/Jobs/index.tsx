@@ -67,7 +67,9 @@ export function Jobs() {
   return (
     <div className="jobs">
       <div className="jobs__header">
-        <p>JobsDev es el destino número uno para buscar y listar increibles ofertas de trabajo remoto.</p>
+        <p>
+          JobsDev es el destino número uno para buscar y listar increibles ofertas de trabajo remoto en programación.
+        </p>
         <Search onSearch={setSearch} />
         <h3 className="jobs__header__title">Últimos Trabajos: {jobsFilter.length}</h3>
       </div>

@@ -4,7 +4,7 @@
 
 <!-- ![template-react]() -->
 
-**JobsDev** es el destino número uno para buscar y listar increibles ofertas de trabajo remoto.
+**JobsDev** es el destino número uno para buscar y listar increibles ofertas de trabajo remoto en programación. Los datos se obtienen desde la siguiente API: [https://github.com/EdixonAlberto/api-jobs-dev](https://github.com/EdixonAlberto/api-jobs-dev)
 
 ## Inicio
 

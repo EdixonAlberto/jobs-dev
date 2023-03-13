@@ -1,6 +1,6 @@
 {
   "name": "jobs-dev",
-  "description": "JobsDev es el destino número uno para buscar y listar increibles ofertas de trabajo remoto",
+  "description": "JobsDev es el destino número uno para buscar y listar increibles ofertas de trabajo remoto en programación",
   "private": true,
   "license": "MIT",
   "version": "0.0.1",
