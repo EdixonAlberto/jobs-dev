@@ -44,3 +44,16 @@
 .jd__link:visited {
   color: var(--color-grey);
 }
+
+.jd__desktop {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 33%;
+  text-align: center;
+}
+
+.jd__desktop span {
+  font-size: 20px;
+}
