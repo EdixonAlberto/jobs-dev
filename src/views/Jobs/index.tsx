@@ -35,26 +35,29 @@ export function Jobs() {
     }
   }, [jobs, search])
 
+  // FUNCTIONS _________________________________________________________________________________________________________
+
   async function getJobs(): Promise<void> {
     const { VITE_API_URL, VITE_ACCESS_TOKEN } = import.meta.env
     const response = await fetch(`${VITE_API_URL}/api/jobs`, {
       headers: { Authorization: `Bearer ${VITE_ACCESS_TOKEN}` }
     })
     const data = (await response.json()) as TResponseListApi<TJob>
+    if (data.error?.length) {
+      alert(`Error del servidor: ${data.error.join(', ')}`)
+    } else {
+      // setJobs(data.response.data)
 
-    if (data.response) {
       const jobs = data.response.data.filter(job => {
         // prettier-ignore
         return (
-          true
-          && job.details.postulations < 50
-          && job.details.remote100
-          && job.details.language === 'spanish'
-        )
+            true
+            && job.details.postulations < 100
+            && job.details.remote100
+            && job.details.language === 'spanish'
+          )
       })
       setJobs(jobs)
-    } else {
-      // TODO: loading false
     }
   }
 
@@ -64,13 +67,16 @@ export function Jobs() {
     })
   }
 
+  // TEMPLATE __________________________________________________________________________________________________________
+
   return (
     <div className="jobs">
+      <Search onSearch={setSearch} />
+
       <div className="jobs__header">
         <p>
           JobsDev es el destino número uno para buscar y listar increibles ofertas de trabajo remoto en programación.
         </p>
-        <Search onSearch={setSearch} />
         <h3 className="jobs__header__title">Últimos Trabajos: {jobsFilter.length}</h3>
       </div>
 

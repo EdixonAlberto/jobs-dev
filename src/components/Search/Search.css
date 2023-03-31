@@ -1,5 +1,10 @@
 .search {
-  position: relative;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  border-bottom-right-radius: 50px;
+  background: var(--color-green-dark);
+  z-index: 1002;
 }
 
 .search__input {
