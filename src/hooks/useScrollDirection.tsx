@@ -1,11 +1,14 @@
 import { useState, useEffect, useCallback } from 'react'
 
-export function useScrollDirection(element: HTMLElement | null = null): 'up' | 'down' {
-  const [y, setY] = useState<number>(element?.scrollTop || 0)
+export function useScrollDirection(element: HTMLElement | Element | Window | null = null): {
+  distance: number
+  direction: 'up' | 'down'
+} {
+  const [y, setY] = useState<number>(getDirY())
   const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up')
 
   const handleDirection = useCallback(() => {
-    const scrollCurrent = element!.scrollTop
+    const scrollCurrent = getDirY()
 
     if (y > scrollCurrent) setScrollDir('up')
     else if (y < scrollCurrent) setScrollDir('down')
@@ -22,5 +25,12 @@ export function useScrollDirection(element: HTMLElement | null = null): 'up' | '
     }
   }, [element, y])
 
-  return scrollDir
+  function getDirY(): number {
+    return element instanceof Window ? element.scrollY : element?.scrollTop || 0
+  }
+
+  return {
+    distance: y,
+    direction: scrollDir
+  }
 }

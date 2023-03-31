@@ -1,8 +1,9 @@
 import './Jobs.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Search } from '~/components/Search'
 import { Icons } from '~/components/Icons'
 import { useLocaleStorge } from '~/hooks/useLocalStorage'
+import { useScrollDirection } from '~/hooks/useScrollDirection'
 
 type TUserStore = {
   views: string[]
@@ -12,13 +13,25 @@ export function Jobs() {
   const [jobs, setJobs] = useState<TJob[]>([])
   const [jobsFilter, setJobsFilter] = useState<TJob[]>([])
   const [search, setSearch] = useState<string>('')
+  const [showGotop, setShowGotop] = useState<boolean>(false)
   const [userStore, setUserStore] = useLocaleStorge<TUserStore>('store', {
     views: []
   })
+  const scroll = useScrollDirection(window)
 
   useEffect(() => {
     getJobs()
   }, [])
+
+  useEffect(() => {
+    if (scroll.distance === 0 && showGotop) {
+      setShowGotop(false)
+    }
+
+    if (scroll.direction === 'down' && !showGotop) {
+      setShowGotop(true)
+    }
+  }, [scroll])
 
   useEffect(() => {
     if (jobs.length || search) {
@@ -65,6 +78,10 @@ export function Jobs() {
     setUserStore({
       views: [...(userStore?.views || []), jobId]
     })
+  }
+
+  function goTop(): void {
+    window.scrollTo({ behavior: 'smooth', top: 0 })
   }
 
   // TEMPLATE __________________________________________________________________________________________________________
@@ -156,6 +173,10 @@ export function Jobs() {
           <p>No hay trabajos publicados</p>
         )}
       </ul>
+
+      <button className={'jobs__gotop' + (showGotop ? ' visible' : '')} onClick={goTop}>
+        <Icons.Arrow />
+      </button>
     </div>
   )
 }

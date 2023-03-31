@@ -1,5 +1,6 @@
 .jobs {
   padding-top: var(--height-header);
+  position: relative;
 }
 
 .jobs__header {
@@ -10,7 +11,7 @@
 
 .jobs__header::before {
   content: '';
-  height: 270px;
+  height: 260px;
   width: 100%;
   position: absolute;
   top: 0;
@@ -173,4 +174,40 @@
 
 .jobs__content__badges .badge__money {
   background: #00a896;
+}
+
+.jobs__gotop {
+  visibility: hidden;
+  width: 40px;
+  height: 40px;
+  margin: 0 8px 8px 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: var(--color-green-dark);
+  border: none;
+  border-radius: 50%;
+  transition: bottom 0.8s ease-in;
+  animation: 1s ease 0s infinite normal none running jump;
+}
+
+.jobs__gotop.visible {
+  visibility: visible;
+  bottom: var(--height-tabs);
+}
+
+.jobs__gotop .jd__icon {
+  margin: 0 auto;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
