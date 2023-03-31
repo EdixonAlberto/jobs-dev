@@ -3,7 +3,7 @@ import './Profile.css'
 export function Profile() {
   return (
     <div className="profile">
-      <h2>Profile</h2>
+      <h2>Perfil</h2>
     </div>
   )
 }

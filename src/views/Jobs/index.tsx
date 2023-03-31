@@ -1,5 +1,5 @@
 import './Jobs.css'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { Search } from '~/components/Search'
 import { Icons } from '~/components/Icons'
 import { useLocaleStorge } from '~/hooks/useLocalStorage'

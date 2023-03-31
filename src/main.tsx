@@ -10,6 +10,8 @@ import { NotFound } from '~/views/NotFound'
 // VIEWS
 import { Login } from '~/views/Auth/Login'
 import { Jobs } from '~/views/Jobs'
+import { Statistics } from '~/views/Statistics'
+import { Subscription } from '~/views/Subscription'
 import { Profile } from '~/views/Profile'
 
 const isDesktop = window.screen.width > 768
@@ -37,6 +39,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             }
           >
             <Route path="/" element={<Jobs />} />
+            <Route path="/statistics" element={<Statistics />} />
+            <Route path="/subs" element={<Subscription />} />
             <Route path="/profile" element={<Profile />} />
           </Route>
 
