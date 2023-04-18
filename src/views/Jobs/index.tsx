@@ -51,26 +51,29 @@ export function Jobs() {
   // FUNCTIONS _________________________________________________________________________________________________________
 
   async function getJobs(): Promise<void> {
-    // const { VITE_API_URL, VITE_ACCESS_TOKEN } = import.meta.env
-    const response = await fetch(`/static/mocks/jobs.json`, {
-      // headers: { Authorization: `Bearer ${VITE_ACCESS_TOKEN}` }
+    const { VITE_ENV, VITE_API_URL, VITE_ACCESS_TOKEN = '' } = import.meta.env
+    const url = VITE_ENV === 'demo' ? '/static/mocks/jobs.json' : VITE_API_URL + '/api/jobs'
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${VITE_ACCESS_TOKEN}` }
     })
     const data = (await response.json()) as TResponseListApi<TJob>
     if (data.error?.length) {
       alert(`Error del servidor: ${data.error.join(', ')}`)
     } else {
-      setJobs(data.response.data)
-
-      // const jobs = data.response.data.filter(job => {
-      //   // prettier-ignore
-      //   return (
-      //       true
-      //       && job.details.postulations < 100
-      //       && job.details.remote100
-      //       && job.details.language === 'spanish'
-      //     )
-      // })
-      // setJobs(jobs)
+      if (VITE_ENV === 'demo') {
+        setJobs(data.response.data)
+      } else {
+        const jobs = data.response.data.filter(job => {
+          // prettier-ignore
+          return (
+              true
+              && job.details.postulations < 100
+              && job.details.remote100
+              && job.details.language === 'spanish'
+            )
+        })
+        setJobs(jobs)
+      }
     }
   }
 
